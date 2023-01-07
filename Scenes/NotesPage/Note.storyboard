@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Note View Controller-->
+        <scene sceneID="xDL-sv-JND">
+            <objects>
+                <viewController storyboardIdentifier="note" id="tLz-jr-Tcg" customClass="NoteViewController" customModule="TabBarNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMH-Zw-4JW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iw1-kL-NmA">
+                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GtA-CT-nX2">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="giM-My-HBF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iw1-kL-NmA" firstAttribute="leading" secondItem="giM-My-HBF" secondAttribute="leading" id="21C-9n-yuz"/>
+                            <constraint firstItem="giM-My-HBF" firstAttribute="trailing" secondItem="iw1-kL-NmA" secondAttribute="trailing" id="QFZ-8i-aj7"/>
+                            <constraint firstItem="giM-My-HBF" firstAttribute="bottom" secondItem="iw1-kL-NmA" secondAttribute="bottom" id="k9c-O1-oI9"/>
+                            <constraint firstItem="iw1-kL-NmA" firstAttribute="top" secondItem="giM-My-HBF" secondAttribute="top" id="qgN-6f-FYG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="b23-CG-nYh"/>
+                    <connections>
+                        <outlet property="collectionView" destination="iw1-kL-NmA" id="QvM-iV-H0G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zW8-qB-bX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101.5267175572519" y="-6.3380281690140849"/>
+        </scene>
+        <!--Notes-->
+        <scene sceneID="DB0-GV-v8N">
+            <objects>
+                <navigationController storyboardIdentifier="notes" automaticallyAdjustsScrollViewInsets="NO" id="RRY-Y2-CVq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notes" id="N7t-4y-ZhN">
+                        <imageReference key="image" image="note.text" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" largeTitles="YES" id="N9u-S7-hXr">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tLz-jr-Tcg" kind="relationship" relationship="rootViewController" id="w24-3b-yoS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jzL-fg-bnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="174.80916030534351" y="-6.3380281690140849"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="note.text" catalog="system" width="128" height="107"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
